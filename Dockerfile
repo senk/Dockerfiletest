@@ -1,2 +1,2 @@
-FROM ubuntu:vivid-20150319.1
+FROM alpine:3.3.1
 CMD ["/bin/echo","Hello World"]
