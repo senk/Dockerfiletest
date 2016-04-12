@@ -1,0 +1,17 @@
+---
+  profile:
+    name: "Default"
+    description: "Default Profile. Checks basic syntax."
+  line_rules: 
+    FROM: 
+      paramSyntaxRegex: /^[a-z0-9./-]+(:[a-z0-9.]+)?$/
+      rules: 
+        - 
+          label: "is_latest_tag"
+          regex: /latest/
+          level: "error"
+          message: "base image uses 'latest' tag"
+          description: "using the 'latest' tag may cause unpredictable builds. It is recommended that a specific tag is used in the FROM line or *-released which is the latest supported release."
+          reference_url: 
+            - "https://docs.docker.com/reference/builder/"
+            - "#from"
