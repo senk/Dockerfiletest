@@ -3,7 +3,7 @@ require "docker"
 
 describe "Dockerfile" do
   imagename = "docker.senk.biz:18444/myapp:" + ENV['BUILD_TAG']
-  image = Docker::Image.build_from_dir('.')
+  image = Docker::Image.create('fromImage' => imagename)
 
   set :os, family: :debian
   set :backend, :docker
