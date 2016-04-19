@@ -8,7 +8,7 @@ describe "Dockerfile" do
   set :os, family: :debian
   set :backend, :docker
   set :docker_image, image.id
-
+ describe imagename do
   def os_version
     command("lsb_release -a").stdout
   end
@@ -16,6 +16,6 @@ describe "Dockerfile" do
   it "is Ubuntu 14" do
     expect(os_version).to include("Ubuntu 14")
   end
-
+ end
 end
 
