@@ -2,7 +2,7 @@ require "serverspec"
 require "docker"
 
 describe "Dockerfile" do
-  imagename = "docker.senk.biz:18444/myapp:" + ENV['BUILD_TAG']
+  imagename = "docker.senk.biz/jenkins/myapp:" + ENV['BUILD_TAG']
   image = Docker::Image.create('fromImage' => imagename)
 
   set :os, family: :debian
